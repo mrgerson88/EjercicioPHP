@@ -1,22 +1,21 @@
 
-<nav class="navbar navbar-dark bg-dark">
-  
 
-  <ul class="nav justify-content-center">
-      <li class="nav-item">
-         <a class="nav-link active" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-         <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-         <a class="nav-link" href="#">Link</a>
-      </li>
-     <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-     </li>
-   </ul>
-</nav>
+  
+<footer class="site-footer">
+      <div class="text-center">
+        <p>
+          &copy; Copyrights  <strong>Concesionario</strong>. All Rights Reserved
+        </p>
+        <div class="credits">
+          
+          Gustavo Guevara,Brayan Olarte,Gerson Gomez<a href="#">Repositorio</a>
+        </div>
+        <a href="index.html#" class="go-top">
+          <i class="fa fa-angle-up"></i>
+          </a>
+      </div>
+    </footer>
+
 
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
