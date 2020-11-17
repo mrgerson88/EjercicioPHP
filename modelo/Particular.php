@@ -1,6 +1,6 @@
 <?php
 
-class Particular{
+class Particular extends Cliente{
 
     private $id;
     private $nombre;

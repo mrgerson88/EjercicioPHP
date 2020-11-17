@@ -1,6 +1,6 @@
 <?php
 
-class Agencia{
+class Agencia extends Cliente{
 
     private $id;
     private $nit;

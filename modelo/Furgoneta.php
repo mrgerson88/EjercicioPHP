@@ -8,7 +8,6 @@ class Furgoneta extends Vehiculo{
         return $this->capacidadCarga;
     }
     public function setCapacidadCarga($capacidadCarga){
-
         $this->capacidadCarga = $capacidadCarga;
 
     }

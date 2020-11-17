@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar Compra vehiculo</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-</head> 
-<body>
-    <div class="container mt-5">
+<div class="container mt-5">
         <h2>Registrar Compra Vehiculo</h2>
-        <form action="/EjercicioPHP/controlador/registro_compra.php" method="POST">
+        <form class="col s12" action="<?= CONTEXT_APP . '/index.php' ?>" method="GET">
+            <input type="hidden" name="controller" value="RegVehiculo">
+            <input type="hidden" name="method" value="registrar">
             <h5>Volumen<h5>
             <input name="volumen" type="text">
             <h5>Tipo Combustible<h5>
@@ -29,9 +22,7 @@
             <input type="submit" class="btn btn-dark" value="Registrar">
         </form>
     </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    
     <script>
         $(function() {
             $("#tipoAuto").change(function() {
@@ -51,14 +42,3 @@
             });
         });
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-</body>
-</html>
-
-<?php
-
-
-
-?>
-

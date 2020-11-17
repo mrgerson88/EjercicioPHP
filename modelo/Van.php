@@ -7,7 +7,7 @@ class Van  extends Vehiculo {
     private $cantidadPasajeros;
 
     public function getCantidadPasajeros(){
-        return $this->$cantidadPasajeros;
+        return $this->cantidadPasajeros;
     }
 
     public function setCantidadPasajeros($cantidadPasajeros){

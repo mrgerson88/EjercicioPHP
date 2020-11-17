@@ -31,11 +31,11 @@ class Vehiculo{
         $this->volumen = $volumen;
     }
 
-    public function setTipoCombustible(){
+    public function setTipoCombustible($tipoCombustible){
         $this->tipoCombustible=$tipoCombustible;
     }
 
-    public function setCantidadCilindros(){
+    public function setCantidadCilindros($cantidadCilindros){
         $this->cantidadCilindros = $cantidadCilindros;
     }
 
