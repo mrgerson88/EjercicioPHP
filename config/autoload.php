@@ -2,10 +2,12 @@
 
 function autoload($nombreClase){
     $rutaArchivo = "";
-    $rutas = [DIR_CONTROLLER,
-            DIR_CONTROLLER_VEHICULO,
-            DIR_MODEL,
-            DIR_VIEW,DIR_SERVICE
+    $rutas = [
+        DIR_CONTROLLER,
+        DIR_CONTROLLER_VEHICULO,
+        DIR_MODEL,
+        DIR_VIEW,
+        DIR_SERVICE
     ];
     foreach ($rutas as $ruta) {
         $rutaArchivo = $ruta . $nombreClase . ".php";
