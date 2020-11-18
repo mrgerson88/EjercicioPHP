@@ -10,27 +10,27 @@ class RegVehiculoController{
     }
 
     private function regVehiculo($vehiculo){
-        $vehiculo->setVolumen($_GET["volumen"]);
-        $vehiculo->setTipoCombustible($_GET["tipoCombustible"]);
-        $vehiculo->setCantidadCilindros($_GET["cantidadCilindros"]);
+        $vehiculo->setVolumen(filter_input(INPUT_POST, "volumen"));
+        $vehiculo->setTipoCombustible(filter_input(INPUT_POST, "tipoCombustible"));
+        $vehiculo->setCantidadCilindros(filter_input(INPUT_POST,"cantidadCilindros"));
     }
 
     public function registrar(){
-        if($_GET["cantidadPuertas"]){
+        if(filter_input(INPUT_POST,"cantidadPuertas")){
             $automovil = new Automovil();
-            $automovil->setCantidadPuertas($_GET["cantidadPuertas"]);
+            $automovil->setCantidadPuertas(filter_input(INPUT_POST,"cantidadPuertas"));
             $this->regVehiculo($automovil);
             AutomovilService::registrarAutomovil($automovil);
         }
-        if($_GET["capacidadCarga"]){
+        if(filter_input(INPUT_POST,"capacidadCarga")){
             $furgoneta = new Furgoneta();
-            $furgoneta->setCapacidadCarga($_GET["capacidadCarga"]);
+            $furgoneta->setCapacidadCarga(filter_input(INPUT_POST, "capacidadCarga"));
             $this->regVehiculo($furgoneta);
             FurgonetaService::registrarFurgoneta($furgoneta);
         }
-        if($_GET["cantidadPasajeros"]){
+        if(filter_input(INPUT_POST, "cantidadPasajeros")){
             $van = new Van();
-            $van->setCantidadPasajeros($_GET["cantidadPasajeros"]);
+            $van->setCantidadPasajeros(filter_input(INPUT_POST,"cantidadPasajeros"));
             $this->regVehiculo($van);
             VanService::registrarVan($van);
         }

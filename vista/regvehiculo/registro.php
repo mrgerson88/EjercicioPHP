@@ -2,11 +2,7 @@
         <div class="col-6">
             <h2>Registrar Compra Vehiculo</h2>
         </div>
-
-        
-        <form class="col-6" action="<?= CONTEXT_APP . '/index.php' ?>" method="GET">
-            <input type="hidden" name="controller" value="RegVehiculo">
-            <input type="hidden" name="method" value="registrar">
+        <form class="col-6" action="<?= getUrlControllerMethod('RegVehiculo','registrar') ?>" method="POST">
             <div class="form-group">
              <label for="volumen">Volumen</label>
              <input id="volumen" class="form-control" name="volumen" type="text">
