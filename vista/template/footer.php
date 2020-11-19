@@ -9,7 +9,7 @@
         <div class="credits">
           
         <p>Gustavo Guevara,Brayan Olarte,Gerson Gomez</p>
-          <a href="https://github.com/mrgerson88/EjercicioPHP.git" style="color:white">Link de Repositorio</a>
+          <a  target="blank" href="https://github.com/mrgerson88/EjercicioPHP.git" style="color:white">Link de Repositorio</a>
         </div>
         
       </div>

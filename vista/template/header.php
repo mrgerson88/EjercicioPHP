@@ -39,10 +39,12 @@
         <a class="nav-link" href="#">Alquilar vehiculo</a>
         </li>
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Vehiculos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="<?= getUrlControllerMethod('vehiculo','registro')?>">Registrar Compra</a>
+            <div class="dropdown-divider"></div>
             <form action="<?= getUrlControllerMethod("vehiculo","listar") ?>" method="POST">
                 <button name="van" type="submit" class="dropdown-item">Van</button>
                 <input type="hidden" name="action" value="van">
