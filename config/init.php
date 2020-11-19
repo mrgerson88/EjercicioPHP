@@ -1,6 +1,6 @@
 <?php
 
-define("CONTEXT_APP","/EjercicioPHP");
+define("CONTEXT_APP","/concesionario");
 
 define("DOCUMENT_ROOT", $_SERVER["DOCUMENT_ROOT"] . CONTEXT_APP);
 define("DIR_CONTROLLER", DOCUMENT_ROOT . "/controlador/");
