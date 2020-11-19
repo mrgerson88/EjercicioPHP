@@ -2,6 +2,8 @@
 
 define("CONTEXT_APP","/concesionario");
 
+
+define("RESOURCES", CONTEXT_APP . "/vista/resources/");
 define("DOCUMENT_ROOT", $_SERVER["DOCUMENT_ROOT"] . CONTEXT_APP);
 define("DIR_CONTROLLER", DOCUMENT_ROOT . "/controlador/");
 define("DIR_CONTROLLER_VEHICULO", DIR_CONTROLLER . "vehiculo/");
