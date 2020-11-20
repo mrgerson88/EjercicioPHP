@@ -4,12 +4,12 @@
         </div>
         <form class="col-6" action="<?= getUrlControllerMethod('vehiculo','registrar') ?>" method="POST">
             <div class="form-group">
-             <label for="volumen">Volumen</label>
-             <input id="volumen" class="form-control" name="volumen" type="text">
+                <label for="volumen">Volumen</label>
+                <input id="volumen" class="form-control" name="volumen" type="text">
             </div>
             <div class="form-group">
-             <label for="tipoCombustible">Tipo combustible</label>
-             <input id="tipoCombustible" class="form-control" name="tipoCombustible" type="text">
+                <label for="tipoCombustible">Tipo combustible</label>
+                <input id="tipoCombustible" class="form-control" name="tipoCombustible" type="text">
             </div>
             <div class="form-group">
             <label for="cantidadCilindros">Cantidad cilindros</label>
@@ -30,8 +30,9 @@
             <input name="cantidadPuertas" class="form-control" id="cantidadPuertas" style="display:none"   placeholder="cantidad puertas..." type="text">
             <input name="capacidadCarga" class="form-control" id="capacidadCarga" style="display:none"   placeholder="capacidad carga...." type="text">
             </div>
+            <input type="hidden" name="estado" value="1">
             <div class="mb-2"> 
-            <input type="submit" class="btn btn-dark" value="Registrar">
+                <input type="submit" class="btn btn-dark" value="Registrar">
             </div>
         </form>
 </div>
