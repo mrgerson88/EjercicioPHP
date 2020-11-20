@@ -11,7 +11,7 @@ class VehiculoController{
     
     public function registro() {
         Template::render(
-            DIR_VIEW . "regvehiculo/registro.php",
+            DIR_VIEW . "vehiculo/registro.php",
             ["titulo"=>"Registro Vehiculo"]
         );
     }
@@ -22,6 +22,7 @@ class VehiculoController{
         $vehiculo->setVolumen(filter_input(INPUT_POST, "volumen"));
         $vehiculo->setTipoCombustible(filter_input(INPUT_POST, "tipoCombustible"));
         $vehiculo->setCantidadCilindros(filter_input(INPUT_POST,"cantidadCilindros"));
+        $vehiculo->setEstado(filter_input(INPUT_POST,"estado"));
     }
 
     //registra dependiendo del tipo de vehiculo
@@ -50,7 +51,7 @@ class VehiculoController{
                 break;
         }
         Template::render(
-            DIR_VIEW . "regvehiculo/registro.php",
+            DIR_VIEW . "vehiculo/registro.php",
             ["titulo"=>"Registro Vehiculo"]
         );
     }
@@ -82,7 +83,7 @@ class VehiculoController{
         
         
         Template::render(
-            DIR_VIEW . "regvehiculo/lista.php",
+            DIR_VIEW . "vehiculo/lista.php",
             ["titulo"=>"Lista","lista"=>$lista,"attrPropio"=>$attr,"titulo"=>$titulo]
         );
     }
