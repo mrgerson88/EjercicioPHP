@@ -22,4 +22,20 @@ class RevisionService{
 
     }
 
+    public function revisionPorEmpleado($idEmpleado){
+        $listaRevEmp = [];
+        $pdo = ConexionBD::getPDO();
+        $stm = $pdo->prepare(
+            "SELECT * FROM revisiones WHERE idempleados = :idempleado"
+        );
+        $stm->bindValue(":idempleado",$idEmpleado,PDO::PARAM_INT);
+        $stm->execute();
+        if($stm->execute()){
+            while($fila = $stm->fetch(PDO::FETCH_ASSOC)){
+                array_push($listaRevEmp,$fila);
+            }
+        }
+        return $listaRevEmp;
+    }
+
 }

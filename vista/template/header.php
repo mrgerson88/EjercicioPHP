@@ -29,7 +29,7 @@
             </div>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="#">Revisiones</a>
+        <a class="nav-link" href="<?=getUrlControllerMethod('revision', 'listarVehiRev') ?>">Revisiones</a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="#">Alquilar vehiculo</a>

@@ -18,7 +18,10 @@ class RevisionController{
         $listaEmpleados = self::$empleado->listarEmpl();
         Template::render(
             DIR_VIEW . "revisiones/lista.php",
-            ["listavehrev"=>$listaVehRev,"listaempleados"=>$listaEmpleados]
+            ["listavehrev"=>$listaVehRev,"listaempleados"=>$listaEmpleados,
+            "titulo"=>"Lista Revisiones"
+            ]
+
         );
     }
 

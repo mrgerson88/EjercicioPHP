@@ -5,6 +5,7 @@ function autoload($nombreClase){
     $rutas = [
         DIR_CONTROLLER,
         DIR_CONTROLLER_VEHICULO,
+        DIR_CONTROLLER_EMPLEADOS,
         DIR_MODEL,
         DIR_VIEW,
         DIR_SERVICE

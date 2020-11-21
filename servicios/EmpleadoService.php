@@ -16,4 +16,12 @@ class EmpleadoService{
         return $listaEmpleados;
     }
 
+    // public function regEmpleado(){
+    //     $pdo = ConexionBD::getPDO();
+    //     $stm = $pdo->prepare(
+    //         "INSERT INTO empleados (nombre) VALUES (:nombre)"
+    //     );        
+    //     $stm->bindValue(":nombre",$nombre,PDO::PARAM_STR);
+    //     $stm->execute();
+    // }
 }
