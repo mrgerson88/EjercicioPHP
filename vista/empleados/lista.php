@@ -20,7 +20,7 @@
 </table>
 <button class="btn btn-dark" type="submit" data-toggle="modal" data-target="#regEmpleado">Registrar Empleado</button>     
 <hr>
-<?php if($data["listaRevEmp"] && $data["listaRevEmp"] != null ){ ?>
+<?php if(isset($data["listaRevEmp"]) && $data["listaRevEmp"] != null ){ ?>
 <table class="table table-striped">
     <thead class="thead-dark">
         <th>Id Revisión</th>
@@ -34,6 +34,7 @@
     <?php } ?>
 <?php } ?>
 </table>
+<?= $data["mensaje"] ?></p>
 
 <!-- modal -->
 
@@ -47,10 +48,21 @@
         </button>
       </div>
       <div class="modal-body">
-      <form action="<?= getUrlControllerMethod("empleado","listRevEmpleados")?>" method="POST">
-                <input name="idEmpleado" value="<?= $empleado["idempleados"] ?>"><br><br>
-                <button class="btn btn-dark" data-toggle="modal" data-target="#revisiones">Guardar</button>
-            </form>
+        <form action="<?= getUrlControllerMethod("empleado","registrar")?>" method="POST">
+          <div class="form-group">
+            <label for="nom-empleado">Nombre</label>
+            <input type="text" name="nom-empleado" class="form-control" id="nom-empleado">
+          </div>
+          <div class="form-group">
+            <label for="email-empleado">Email</label>
+            <input type="text" name="email-empleado" class="form-control" id="email-empleado">
+          </div>
+          <div class="form-group">
+            <label for="password-empleado">Password</label>
+            <input type="password" name="password-empleado" class="form-control" id="password-empleado">
+          </div>
+          <button type="submit" class="btn btn-dark">Registrar</button>
+        </form>
       </div>
 
     </div>

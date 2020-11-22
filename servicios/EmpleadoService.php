@@ -16,12 +16,33 @@ class EmpleadoService{
         return $listaEmpleados;
     }
 
-    // public function regEmpleado(){
-    //     $pdo = ConexionBD::getPDO();
-    //     $stm = $pdo->prepare(
-    //         "INSERT INTO empleados (nombre) VALUES (:nombre)"
-    //     );        
-    //     $stm->bindValue(":nombre",$nombre,PDO::PARAM_STR);
-    //     $stm->execute();
-    // }
+    public function regEmpleado($empleado){
+        $pdo = ConexionBD::getPDO();
+        $stm = $pdo->prepare(
+            "INSERT INTO empleados (nombre,email,password) VALUES (:nombre,:email,:password)"
+        );        
+        $stm->bindValue(":nombre",$empleado->getNombres(),PDO::PARAM_STR);
+        $stm->bindValue(":email",$empleado->getEmail(),PDO::PARAM_STR);
+        $stm->bindValue(":password",$empleado->getPassword(),PDO::PARAM_STR);
+        $stm->execute();
+    }
+
+    public function consultarLogin($email,$password){
+        $empleado = null;
+        $pdo = ConexionBD::getPDO();
+        $stm = $pdo->prepare(
+            "SELECT * FROM empleados WHERE email = :email AND password = :password"
+        );
+        $stm->bindValue(":email",$email,PDO::PARAM_STR);
+        $stm->bindValue(":password",$password,PDO::PARAM_STR);
+        if($stm->execute()){
+            if($fila = $stm->fetch(PDO::FETCH_ASSOC)){
+                $empleado = $fila;
+            }
+        } else{
+            print_r($stm->errorInfo());
+        }
+
+        return $empleado;
+    }
 }

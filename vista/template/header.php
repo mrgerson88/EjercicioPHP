@@ -8,6 +8,7 @@
     </head>
 <body>
 
+<?php if(isset($_SESSION["user"])){?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#"><i class="fa fa-car"></i></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,6 +28,9 @@
                 <i class="fa fa-users"></i>
                 </a>
             </div>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="<?=getUrlControllerMethod('empleado', 'listEmpleados') ?>">Empleados</a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="<?=getUrlControllerMethod('revision', 'listarVehiRev') ?>">Revisiones</a>
@@ -55,6 +59,11 @@
             </form>
         </div>
         </li>
+        <li class="nav-item dropdown" style="padding-left:500px; margin-top:5px">
+            <strong style="color:white" >Bienvenido <?= ucfirst($_SESSION["user"]["nombre"])?></strong>
+            <a style="margin-left:30px;" href="<?=getUrlControllerMethod("login","salir")?>" class="btn btn-sm btn-info">Cerrar Sesión</a>
+        </li>
     </ul>
     </div>
 </nav>
+<?php }?>

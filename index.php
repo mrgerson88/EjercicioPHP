@@ -5,8 +5,10 @@ $nombreDelControlador = $_GET["controller"];
 $nombreDelMetodo = $_GET["method"];
 
 if($nombreDelControlador){
-    $nombreDelControlador = ucfirst($nombreDelControlador);
-    $nombreDelControlador .= "Controller";
-    $controller = new $nombreDelControlador();
-    $controller->$nombreDelMetodo();
+    // if(ValidacionSesion::validar($nombreDelControlador, $nombreDelMetodo)){
+        $nombreDelControlador = ucfirst($nombreDelControlador);
+        $nombreDelControlador .= "Controller";
+        $controller = new $nombreDelControlador();
+        $controller->$nombreDelMetodo();
+    // }
 }

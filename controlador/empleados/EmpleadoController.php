@@ -21,20 +21,36 @@ class EmpleadoController{
     }
 
     public function listRevEmpleados(){
+        $mensaje = null;
         $idEmpleado = filter_input(INPUT_POST,"idEmpleado");
         $listaRevEmp = self::$revision->revisionPorEmpleado($idEmpleado);
+        if(!$listaRevEmp){
+            $mensaje = "No hay revisiones asociadas a este empleado";
+        }
         $listaEmpleados = self::$empleado->listarEmpl();
         Template::render(
             DIR_VIEW . "empleados/lista.php",
             ["listaRevEmp"=>$listaRevEmp,
             "listaempleados"=>$listaEmpleados,
-            "titulo"=>"Lista Empleados"
+            "titulo"=>"Lista Empleados",
+            "mensaje"=>$mensaje
             ]
         );
     }
 
-    // public function RegEmpleados(){
-
-    // }
+    public function registrar(){       
+        $empleado = new Empleado();
+        $empleado->setNombres(filter_input(INPUT_POST,"nom-empleado"));
+        $empleado->setEmail(filter_input(INPUT_POST,"email-empleado"));
+        $empleado->setPassword(filter_input(INPUT_POST,"password-empleado"));
+        self::$empleado->regEmpleado($empleado);
+        $listaEmpleados = self::$empleado->listarEmpl();
+        Template::render(
+            DIR_VIEW . "empleados/lista.php",
+            ["listaempleados"=>$listaEmpleados,
+            "titulo"=>"Lista Empleados"
+            ]
+        );
+    }
 
 }

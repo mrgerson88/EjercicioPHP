@@ -10,4 +10,11 @@ class Template {
         include(DIR_VIEW . "template/footer.php");
     }
 
+    public static function renderLogin($rutaContenido,$data = []){
+        
+        include(DIR_VIEW . "template/header.php");
+        
+        include($rutaContenido);
+    }
+
 }

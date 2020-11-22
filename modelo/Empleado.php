@@ -4,10 +4,15 @@ class Empleado{
     
     private $identificacion;
     private $nombres;
-    private $revisiones;
+    private $email;
+    private $password;
 
-    public function getRevisiones(){
-        return $this->revisiones;
+    public function getEmail(){
+        return $this->email;
+    }
+
+    public function getPassword(){
+        return $this->password;
     }
 
     
@@ -19,8 +24,8 @@ class Empleado{
         return $this->nombres;
     }
     
-    public function setRevisiones($revisiones){
-        $this->revisiones = $revisiones;
+    public function setEmail($email){
+        $this->email = $email;
     }
 
     public function setIdentificacion($identificacion){
@@ -29,6 +34,10 @@ class Empleado{
 
     public function setNombres($nombres){
         $this->nombres = $nombres;
+    }
+
+    public function setPassword($password){
+        $this->password = $password;
     }
     
 }
