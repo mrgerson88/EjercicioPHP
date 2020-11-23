@@ -6,7 +6,7 @@ class ValidacionSesion {
     public static function validar($controlador, $metodo){
         if($controlador != "login" || $metodo != "ingresar"){
             if(!self::sessionIniciada()){
-                header("Location: " . getUrlControllerMethod("Login", "ingresar"));
+                header("Location: " . getUrlControllerMethod("login", "ingresar"));
                 return false;
             }
         }

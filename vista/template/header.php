@@ -59,7 +59,7 @@
             </form>
         </div>
         </li>
-        <li class="nav-item dropdown" style="padding-left:500px; margin-top:5px">
+        <li class="nav-item dropdown" style="padding-left:450px; margin-top:5px">
             <strong style="color:white" >Bienvenido <?= ucfirst($_SESSION["user"]["nombre"])?></strong>
             <a style="margin-left:30px;" href="<?=getUrlControllerMethod("login","salir")?>" class="btn btn-sm btn-info">Cerrar Sesión</a>
         </li>

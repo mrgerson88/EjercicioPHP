@@ -34,7 +34,9 @@
     <?php } ?>
 <?php } ?>
 </table>
-<?= $data["mensaje"] ?></p>
+<?php if(isset($data["mensaje"])){ ?>
+<p><?= $data["mensaje"] ?></p>
+<?php } ?>
 
 <!-- modal -->
 
