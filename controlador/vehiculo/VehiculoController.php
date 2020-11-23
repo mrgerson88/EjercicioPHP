@@ -63,20 +63,24 @@ class VehiculoController{
         $lista  = [];
         $attr = "";
         $titulo = "";
+        $tituloPrincipal="";
         switch ($action) {
             case 'van':
                 $attr = "numPasajeros";
                 $titulo = "Numero pasajeros";
+                $tituloPrincipal ="Lista vans";
                 $lista = self::$vehiculo->listar($action,$attr);
                 break;
             case 'automovil':
                 $attr = "numPuertas";
                 $titulo = "Numero puertas";
+                $tituloPrincipal ="Lista automoviles";
                 $lista = self::$vehiculo->listar($action,$attr);
                 break;
             case 'furgoneta':
                 $attr = "capCarga";
                 $titulo = "Capacidad Carga";
+                $tituloPrincipal ="Lista furgonetas";
                 $lista = self::$vehiculo->listar($action,$attr);
                 break;
         }
@@ -84,7 +88,12 @@ class VehiculoController{
         
         Template::render(
             DIR_VIEW . "vehiculo/lista.php",
-            ["titulo"=>"Lista","lista"=>$lista,"attrPropio"=>$attr,"titulo"=>$titulo]
+            ["titulo"=>"Lista",
+            "lista"=>$lista,
+            "attrPropio"=>$attr,
+            "titulo"=>$titulo,
+            "tituloPagina"=>$tituloPrincipal
+            ]
         );
     }
 }

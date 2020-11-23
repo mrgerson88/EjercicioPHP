@@ -11,7 +11,7 @@ class EmpleadoController{
         // self::$reg_vehiculo = new RevisionService(); 
     }
 
-    public function listEmpleados(){        
+    public function listar(){        
         $listaEmpleados = self::$empleado->listarEmpl();
         Template::render(
             DIR_VIEW . "empleados/lista.php",

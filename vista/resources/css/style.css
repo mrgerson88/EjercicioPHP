@@ -1,0 +1,13 @@
+
+footer {
+    color: white;
+}
+
+.repository{
+    color: gray;
+    text-decoration: underline;
+}
+
+.repository:hover{
+    color: white;
+}

@@ -7,6 +7,7 @@ function autoload($nombreClase){
         DIR_CONTROLLER_VEHICULO,
         DIR_CONTROLLER_EMPLEADOS,
         DIR_CONTROLLER_LOGIN,
+        DIR_CONTROLLER_CLIENTES,
         DIR_MODEL,
         DIR_VIEW,
         DIR_SERVICE

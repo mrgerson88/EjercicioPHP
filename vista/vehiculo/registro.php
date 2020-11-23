@@ -1,4 +1,4 @@
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-2">
         <div class="col-6">
             <h2>Registrar Compra Vehiculo</h2>
         </div>

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title><?= $data["titulo"] ?></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    </head>
+    <link rel="stylesheet" href="<?= getResource("css/style.css")?>">
+</head>
 <body>
 
 <?php if(isset($_SESSION["user"])){?>
@@ -21,19 +22,19 @@
                 Clientes
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="<?= getUrlControllerMethod("particular","listar") ?>">
                 Particulares <i class="fa fa-user"></i>
                 </a>
-                <a class="dropdown-item" href="#">Agencias
+                <a class="dropdown-item" href="<?= getUrlControllerMethod("agencia","listar") ?>">Agencias
                 <i class="fa fa-users"></i>
                 </a>
             </div>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="<?=getUrlControllerMethod('empleado', 'listEmpleados') ?>">Empleados</a>
+        <a class="nav-link" href="<?=getUrlControllerMethod('empleado', 'listar') ?>">Empleados</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="<?=getUrlControllerMethod('revision', 'listarVehiRev') ?>">Revisiones</a>
+        <a class="nav-link" href="<?=getUrlControllerMethod('revision', 'pendientes') ?>">Revisiones</a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="#">Alquilar vehiculo</a>

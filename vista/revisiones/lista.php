@@ -1,4 +1,4 @@
-<h3 class="m-3">Revisiones pendientes</h3>
+<h3 class="mt-2">Revisiones pendientes</h3>
 <table class="table table-striped">
     <thead class="thead-dark">
         <th>Tipo combustible</th>

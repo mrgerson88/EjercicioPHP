@@ -12,7 +12,7 @@ class RevisionController{
     }
     
     //listar
-    public function listarVehiRev(){
+    public function pendientes(){
 
         $listaVehRev = self::$vehiculo->listarVehiRev();
         $listaEmpleados = self::$empleado->listarEmpl();

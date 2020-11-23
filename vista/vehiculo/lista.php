@@ -1,4 +1,4 @@
-<h3></h3>
+<h3 class="mt-2" ><?= $data["tituloPagina"] ?></h3>
 <table class="table table-striped">
     <thead class="thead-dark">
         <th>Tipo combustible</th>
