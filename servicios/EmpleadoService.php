@@ -19,7 +19,7 @@ class EmpleadoService{
     public function regEmpleado($empleado){
         $pdo = ConexionBD::getPDO();
         $stm = $pdo->prepare(
-            "INSERT INTO empleados (nombre,email,password) VALUES (:nombre,:email,:password)"
+            "INSERT INTO empleados (nombre,email,password) VALUES (:nombre,:email,MD5(:password))"
         );        
         $stm->bindValue(":nombre",$empleado->getNombres(),PDO::PARAM_STR);
         $stm->bindValue(":email",$empleado->getEmail(),PDO::PARAM_STR);
