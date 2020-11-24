@@ -7,7 +7,6 @@ class Contrato{
     private $fechaDevolucion;
     private $lugarEntrega;
     private $lugarDevolucion;
-    private $condiciones;
     private $fianza;
     private $saldo;
 
@@ -31,9 +30,7 @@ class Contrato{
         return $this->lugarDevolucion;
     }
 
-    public function getCondiciones(){
-        return $this->condiciones;
-    }
+    
 
     public function getFianza(){
         return $this->fianza;
@@ -63,9 +60,7 @@ class Contrato{
         $this->lugarDevolucion = $lugarDevolucion;
     }
 
-    public function setCondiciones($condiciones){
-        $this->condiciones = $condiciones;
-    }
+
 
     public function setFianza($fianza){
         $this->fianza = $fianza;

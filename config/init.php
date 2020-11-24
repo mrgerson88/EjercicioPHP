@@ -10,6 +10,7 @@ define("DIR_CONTROLLER_VEHICULO", DIR_CONTROLLER . "vehiculo/");
 define("DIR_CONTROLLER_EMPLEADOS", DIR_CONTROLLER . "empleados/");
 define("DIR_CONTROLLER_LOGIN", DIR_CONTROLLER . "login/");
 define("DIR_CONTROLLER_CLIENTES", DIR_CONTROLLER . "clientes/");
+define("DIR_CONTROLLER_ALQUILER", DIR_CONTROLLER . "alquiler/");
 define("DIR_VIEW", DOCUMENT_ROOT . "/vista/");
 define("DIR_MODEL", DOCUMENT_ROOT . "/modelo/");
 define("DIR_SERVICE", DOCUMENT_ROOT . "/servicios/");

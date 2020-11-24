@@ -36,12 +36,24 @@
         <li class="nav-item">
         <a class="nav-link" href="<?=getUrlControllerMethod('revision', 'pendientes') ?>">Revisiones</a>
         </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">Alquilar vehiculo</a>
-        </li>
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Vehiculos
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="<?= getUrlControllerMethod('alquiler','registro')?>">Registrar Alquiler</a>
+            <div class="dropdown-divider"></div>
+            <form action="<?= getUrlControllerMethod("alquiler","listar") ?>" method="POST">
+                <input class="dropdown-item" type="submit" name="action" value="Alquilados">
+            </form>
+            <form action="<?= getUrlControllerMethod("alquiler","listar") ?>" method="POST">
+                <input class="dropdown-item" type="submit" name="action" value="Reservados">
+            </form>
+        </div>
+        </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Flota
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="<?= getUrlControllerMethod('vehiculo','registro')?>">Registrar Compra</a>

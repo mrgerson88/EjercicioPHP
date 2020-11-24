@@ -32,9 +32,9 @@ class ClienteParticularService{
             "INSERT INTO cli_particulares (cedula,nombre,apellidos,idCliente)
             VALUES (:cedula,:nombre,:apellidos,:idCliente)"
         );
-        $stm->bindValue(":cedula",$clienteParticular->getNombre(),PDO::PARAM_STR);
-        $stm->bindValue(":nombre",$clienteParticular->getApellido(),PDO::PARAM_STR);
-        $stm->bindValue(":apellidos",$clienteParticular->getCedula(),PDO::PARAM_STR);
+        $stm->bindValue(":cedula",$clienteParticular->getCedula(),PDO::PARAM_STR);
+        $stm->bindValue(":nombre",$clienteParticular->getNombre(),PDO::PARAM_STR);
+        $stm->bindValue(":apellidos",$clienteParticular->getApellido(),PDO::PARAM_STR);
         $stm->bindValue(":idCliente",$lastId,PDO::PARAM_INT);
         $stm->execute();
         $pdo->commit();

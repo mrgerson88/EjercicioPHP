@@ -6,13 +6,14 @@ class VehiculoService implements IVehiculoService{
         $pdo = ConexionBD::getPDO();
         $pdo->beginTransaction();
         $stm = $pdo->prepare(
-            "INSERT INTO vehiculo(volumen,tipoCombustible,cantCilindros,estado)
-            VALUES (:volumen, :tipoCombustible, :cantCilindros,:estado)"
+            "INSERT INTO vehiculo(volumen,tipoCombustible,cantCilindros,estado,marca)
+            VALUES (:volumen, :tipoCombustible, :cantCilindros,:estado,:marca)"
         );
         $stm->bindValue(":volumen",$vehiculo->getVolumen(),PDO::PARAM_INT);
         $stm->bindValue(":tipoCombustible",$vehiculo->getTipoCombustible(),PDO::PARAM_STR);
         $stm->bindValue(":cantCilindros",$vehiculo->getCantidadCilindros(),PDO::PARAM_INT);
         $stm->bindValue(":estado",$vehiculo->getEstado(),PDO::PARAM_INT);
+        $stm->bindValue(":marca",$vehiculo->getMarca(),PDO::PARAM_STR);
 
         $stm->execute();
 
@@ -32,7 +33,8 @@ class VehiculoService implements IVehiculoService{
         $listaVehiculos = [];
         $pdo = ConexionBD::getPDO();
         $stm = $pdo->prepare(
-            "SELECT vehiculo.idvehiculo,
+            "SELECT vehiculo.marca,
+                vehiculo.idvehiculo,
                 vehiculo.tipoCombustible,
                 vehiculo.cantCilindros,
                 vehiculo.volumen,
@@ -48,12 +50,14 @@ class VehiculoService implements IVehiculoService{
         return $listaVehiculos;
     }
 
-    public function listarVehiRev(){
+    public function listarVehiculos($estado){
         $listaVehiculos = [];
         $pdo = ConexionBD::getPDO();
         $stm = $pdo->prepare(
-            "SELECT * FROM vehiculo WHERE estado = 1"
+            "SELECT * FROM vehiculo WHERE estado = :estado"
         );
+
+        $stm->bindValue(":estado",$estado,PDO::PARAM_INT);
         if($stm->execute()){
             while($fila = $stm->fetch(PDO::FETCH_ASSOC)){
                 array_push($listaVehiculos,$fila);

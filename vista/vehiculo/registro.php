@@ -8,6 +8,10 @@
                 <input id="volumen" class="form-control" name="volumen" type="text">
             </div>
             <div class="form-group">
+                <label for="marca">Marca</label>
+                <input id="marca" class="form-control" name="marca" type="text">
+            </div>
+            <div class="form-group">
                 <label for="tipoCombustible">Tipo combustible</label>
                 <input id="tipoCombustible" class="form-control" name="tipoCombustible" type="text">
             </div>

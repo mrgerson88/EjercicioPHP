@@ -1,6 +1,16 @@
 
 footer {
     color: white;
+    width: 100%;
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+}
+
+header{
+    height: 100%;
 }
 
 .repository{

@@ -1,6 +1,7 @@
 <h3 class="mt-2">Revisiones pendientes</h3>
 <table class="table table-striped">
     <thead class="thead-dark">
+        <th>Marca</th>
         <th>Tipo combustible</th>
         <th>Cantidad cilindros</th>
         <th>Volumen</th>
@@ -9,6 +10,7 @@
     </thead>
     <?php foreach($data["listavehrev"] as $vehiculo){ ?>
     <tr>
+    <td><?= ucfirst($vehiculo["marca"]) ?></td>
         <td><?= ucfirst($vehiculo["tipoCombustible"]) ?></td>
         <td><?= $vehiculo["cantCilindros"]?></td>
         <td><?= $vehiculo["volumen"]?></td>        

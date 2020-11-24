@@ -23,6 +23,7 @@ class VehiculoController{
         $vehiculo->setTipoCombustible(filter_input(INPUT_POST, "tipoCombustible"));
         $vehiculo->setCantidadCilindros(filter_input(INPUT_POST,"cantidadCilindros"));
         $vehiculo->setEstado(filter_input(INPUT_POST,"estado"));
+        $vehiculo->setMarca(filter_input(INPUT_POST,"marca"));
     }
 
     //registra dependiendo del tipo de vehiculo
@@ -96,4 +97,5 @@ class VehiculoController{
             ]
         );
     }
+
 }

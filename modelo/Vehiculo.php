@@ -7,6 +7,11 @@ class Vehiculo{
     private $tipoCombustible;
     private $cantidadCilindros;
     private $estado;
+    private $marca;
+
+    public function getMarca(){
+        return $this->marca;
+    }
 
     public function getEstado(){
         return $this->estado;
@@ -26,6 +31,9 @@ class Vehiculo{
     
     public function getCantidadCilindros(){
         return $this->cantidadCilindros;
+    }
+    public function setMarca($marca){
+        $this->marca = $marca;
     }
     
     public function setEstado($estado){

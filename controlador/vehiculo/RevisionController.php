@@ -14,7 +14,7 @@ class RevisionController{
     //listar
     public function pendientes(){
 
-        $listaVehRev = self::$vehiculo->listarVehiRev();
+        $listaVehRev = self::$vehiculo->listarVehiculos(1);
         $listaEmpleados = self::$empleado->listarEmpl();
         Template::render(
             DIR_VIEW . "revisiones/lista.php",
@@ -29,13 +29,15 @@ class RevisionController{
         $idEmp = filter_input(INPUT_POST,"empleado");
         $idVeh = filter_input(INPUT_POST,"idvehiculo");
         self::$reg_vehiculo->regRevision($idEmp,$idVeh);
-        $listaVehRev = self::$vehiculo->listarVehiRev();
+        $listaVehRev = self::$vehiculo->listarVehiculos(1);
         $listaEmpleados = self::$empleado->listarEmpl();
         Template::render(
             DIR_VIEW . "revisiones/lista.php",
             ["listavehrev"=>$listaVehRev,"listaempleados"=>$listaEmpleados]
         );
     }
+
+
 
 
 
