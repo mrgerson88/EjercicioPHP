@@ -48,11 +48,11 @@ class AlquilerController{
         $listaVehiculos;
         switch ($accion) {
             case 'Alquilados':
-                $listaVehiculos = self::$vehiculos->listarVehiculos(4);
+                $listaVehiculos = self::$alquiler->listarVehiculosAlquilados(4);
                 $titulo = "Vehículos Alquilados";
             break;
             case 'Reservados':
-                $listaVehiculos = self::$vehiculos->listarVehiculos(3);
+                $listaVehiculos = self::$alquiler->listarVehiculosAlquilados(3);
                 $titulo = "Vehículos Reservados";
             break;
         }
@@ -62,20 +62,6 @@ class AlquilerController{
             "titulo"=>$titulo]
         );
     }
-
-    // public function devolucion(){
-    //     $contrato = new Contrato();
-    //     $contrato->setFechaDevolucion(filter_input(INPUT_POST,"fecha"));
-    //     $contrato->setLugarDevolucion(filter_input(INPUT_POST,"lugarDevolucion"));
-    //     $contrato->setSaldo(filter_input(INPUT_POST,"saldo"));     
-    //     self::$alquiler->devolucion($contrato);        
-    //     Template::render(
-    //         DIR_VIEW . "alquiler/alquilados.php",            
-    //         ["devolucion"=>$alquiler, 
-    //         "titulo"=>"Alquiler Vehiculo"]
-            
-    //     );
-    // }   
 
 
 }
