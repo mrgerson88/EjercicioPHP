@@ -4,9 +4,11 @@ class Template {
 
     public static function render($rutaContenido, $data = []){
         include(DIR_VIEW . "template/header.php");
-
-        include($rutaContenido);
-
+?>
+        <section class="main">
+        <?php    include($rutaContenido); ?>
+        </section>
+<?php
         include(DIR_VIEW . "template/footer.php");
     }
 

@@ -44,12 +44,8 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="<?= getUrlControllerMethod('alquiler','registro')?>">Registrar Alquiler</a>
             <div class="dropdown-divider"></div>
-            <form action="<?= getUrlControllerMethod("alquiler","listar") ?>" method="POST">
-                <input class="dropdown-item" type="submit" name="action" value="Alquilados">
-            </form>
-            <form action="<?= getUrlControllerMethod("alquiler","listar") ?>" method="POST">
-                <input class="dropdown-item" type="submit" name="action" value="Reservados">
-            </form>
+            <a class="dropdown-item" href="<?= getUrlControllerMethod("alquiler","listar") ?>">Alquilados</a>
+            <a href="<?= getUrlControllerMethod("alquiler","listareserva") ?>" class="dropdown-item" type="submit" >Reservados</a>
         </div>
         </li>
         <li class="nav-item dropdown">

@@ -1,16 +1,16 @@
 
 
-  
-<footer>
-  <div class="text-center bg-dark">
+
+ <footer >
+   <div class="text-center bg-dark">
     <p>
       &copy; Copyrights <strong>Concesionario</strong>. All Rights Reserved
     </p>
     <p>Gustavo Guevara,Brayan Olarte,Gerson Gomez</p>
       <a  target="blank" href="https://github.com/mrgerson88/EjercicioPHP.git" class="repository">Link repositorio</a>  
-  </div>
-</footer>
-
+   </div>
+ </footer>
+ 
 
     <script src="https://use.fontawesome.com/42172cd675.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

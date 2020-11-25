@@ -1,25 +1,32 @@
 <h3 class="mt-2"><?= $data["titulo"]?></h3>
 <table class="table table-striped">
     <thead class="thead-dark">
+        <th>Fecha</th>
+        <th>Fianza</th>
         <th>Marca</th>
-        <th>Tipo combustible</th>
-        <th>Cantidad cilindros</th>
-        <th>Volumen</th>
-        <th>Estado</th>        
+        <th></th>    
+        <th></th>     
     </thead>
     <?php foreach($data["listaVehiculos"] as $vehiculo){ ?>
     <tr>
-    <td><?= ucfirst($vehiculo["marca"]) ?></td>
-        <td><?= ucfirst($vehiculo["tipoCombustible"]) ?></td>
-        <td><?= $vehiculo["cantCilindros"]?></td>
-        <td><?= $vehiculo["volumen"]?></td>        
-        <form action="<?=getUrlControllerMethod("alquiler", "alquilados")?>" method="POST"> 
-        <input type="hidden" name="idvehiculo" value="<?= $vehiculo["idvehiculo"]?>">        
-        <td>
-        <button data-toggle="modal" data-target="#reg-devolucion" class="mb-3 btn btn-dark" >Registrar Devolución</button>
-        <?php include("registro.php") ?>
-        </td>
+        <td><?= ucfirst($vehiculo["fecha_entrega"]) ?></td>
+        <td><?= ucfirst($vehiculo["fianza"]) ?></td>
+        <td><?= $vehiculo["marca"]?></td>               
+        <td>    
+            <form action="<?=getUrlControllerMethod("alquiler", "cancelar")?>" method="POST"> 
+                <input type="hidden" name="idvehiculo" value="<?= $vehiculo["idvehiculo"]?>">        
+                <input type="hidden" name="idcontrato" value="<?= $vehiculo["idcontrato"]?>">
+                <div class="pull-right">        
+                <button type="submit" class="mb-3 btn btn-dark pull-right">Cancelar Reserva</button>
+                </div>    
+            </form>
+        </td> 
+        <td> 
+        <form action="<?=getUrlControllerMethod("alquiler", "confirmar")?>" method="POST"> 
+                <input type="hidden" name="idvehiculo" value="<?= $vehiculo["idvehiculo"]?>">  
+                <button type="submit" class="mb-3 btn btn-dark" >Confirmar Alquiler</button>    
         </form>
+        </td>    
     </tr>
     <?php } ?>
 </table>

@@ -32,7 +32,7 @@ class AlquilerService{
         $pdo = ConexionBD::getPDO();
         $pdo->beginTransaction();
         $stm = $pdo->prepare(
-            "SELECT c.idcontrato,c.fecha_entrega,c.fianza,ve.marca,ve.estado 
+            "SELECT c.idcontrato,c.fecha_entrega,c.fianza,ve.marca,ve.estado,ve.idvehiculo
             FROM contrato c 
             INNER JOIN vehiculo ve 
             ON c.idvehiculo = ve.idvehiculo 
@@ -47,7 +47,7 @@ class AlquilerService{
         return $listaVehiculosAlq;
     }
 
-    public function devolucion($contrato){
+    public function devolucionVehiculo($contrato,$idVehiculo){
         $pdo = ConexionBD::getPDO();
         $pdo->beginTransaction();
         $stm = $pdo->prepare(
@@ -58,8 +58,8 @@ class AlquilerService{
         );
         $stm->bindValue(":fecha_devolucion",$contrato->getFechaDevolucion(),PDO::PARAM_STR);
         $stm->bindValue(":lugar_devolucion",$contrato->getLugarDevolucion(),PDO::PARAM_STR);
+        $stm->bindValue(":idcontrato",$contrato->getId(),PDO::PARAM_INT);
         $stm->bindValue(":saldo",$contrato->getSaldo(),PDO::PARAM_INT);
-
         $stm->execute();
         $stm = $pdo->prepare(
             "UPDATE vehiculo SET estado = 1 WHERE idvehiculo = :idVehiculo"
@@ -69,4 +69,28 @@ class AlquilerService{
         $pdo->commit();
     }
 
+    public function cancelarReserva($idVehiculo,$idContrato){
+        $pdo = ConexionBD::getPDO();
+        $pdo->beginTransaction();
+        $stm = $pdo->prepare(
+            "UPDATE vehiculo SET estado = 2 WHERE idvehiculo = :idVehiculo"
+        );
+        $stm->bindValue(":idVehiculo",$idVehiculo,PDO::PARAM_INT);
+        $stm->execute();
+        $stm = $pdo->prepare(
+            "DELETE FROM contrato WHERE idcontrato = :idcontrato"
+        );
+        $stm->bindValue(":idcontrato",$idContrato,PDO::PARAM_INT);
+        $stm->execute();
+        $pdo->commit();
+    }
+
+    public function confirmarAlquiler($idVehiculo){
+        $pdo = ConexionBD::getPDO();
+        $stm = $pdo->prepare(
+            "UPDATE vehiculo SET estado = 4 WHERE idvehiculo = :idVehiculo"
+        );
+        $stm->bindValue(":idVehiculo",$idVehiculo,PDO::PARAM_INT);
+        $stm->execute();
+    }
 }
