@@ -40,7 +40,8 @@ class VehiculoService implements IVehiculoService{
                 vehiculo.volumen,
                 $tipoVehiculo.$attr
             FROM vehiculo 
-            INNER JOIN $tipoVehiculo ON vehiculo.idvehiculo = $tipoVehiculo.idvehiculo"
+            INNER JOIN $tipoVehiculo ON vehiculo.idvehiculo = $tipoVehiculo.idvehiculo
+            WHERE vehiculo.estado NOT IN (5)"
         );
         if($stm->execute()){
             while($fila = $stm->fetch(PDO::FETCH_ASSOC)){
@@ -66,4 +67,12 @@ class VehiculoService implements IVehiculoService{
         return $listaVehiculos;
     }
 
+    public function ventaVehiculo($idVehiculo){
+        $pdo = ConexionBD::getPDO();
+        $stm = $pdo->prepare(
+            "UPDATE vehiculo SET estado = 5 WHERE idvehiculo = :idvehiculo"
+        );
+        $stm->bindValue(":idvehiculo",$idVehiculo,PDO::PARAM_INT);
+        $stm->execute();
+    }
 }

@@ -65,11 +65,13 @@ class VehiculoController{
         $attr = "";
         $titulo = "";
         $tituloPrincipal="";
+        $tipoCarro = "";
         switch ($action) {
             case 'van':
                 $attr = "numPasajeros";
                 $titulo = "Numero pasajeros";
                 $tituloPrincipal ="Lista vans";
+                $tipoCarro = "van";
                 $lista = self::$vehiculo->listar($action,$attr);
                 break;
             case 'automovil':
@@ -77,11 +79,13 @@ class VehiculoController{
                 $titulo = "Numero puertas";
                 $tituloPrincipal ="Lista automoviles";
                 $lista = self::$vehiculo->listar($action,$attr);
+                $tipoCarro = "automovil";
                 break;
             case 'furgoneta':
                 $attr = "capCarga";
                 $titulo = "Capacidad Carga";
                 $tituloPrincipal ="Lista furgonetas";
+                $tipoCarro = "furgoneta";
                 $lista = self::$vehiculo->listar($action,$attr);
                 break;
         }
@@ -93,9 +97,60 @@ class VehiculoController{
             "lista"=>$lista,
             "attrPropio"=>$attr,
             "titulo"=>$titulo,
-            "tituloPagina"=>$tituloPrincipal
+            "tituloPagina"=>$tituloPrincipal,
+            "tipoDeVehiculo"=>$tipoCarro
             ]
         );
+    }
+
+    public function vender(){
+        $idVehiculo = filter_input(INPUT_POST,"idvehiculo");
+        $action = filter_input(INPUT_POST,"tipoVehiculo");
+        self::$vehiculo->ventaVehiculo($idVehiculo);
+        $lista  = [];
+        $attr = "";
+        $titulo = "";
+        $tituloPrincipal="";
+        $tipoCarro = "";
+        switch ($action) {
+            case 'van':
+                $attr = "numPasajeros";
+                $titulo = "Numero pasajeros";
+                $tituloPrincipal ="Lista vans";
+                $tipoCarro = "van";
+                $lista = self::$vehiculo->listar($action,$attr);
+                break;
+            case 'automovil':
+                $attr = "numPuertas";
+                $titulo = "Numero puertas";
+                $tituloPrincipal ="Lista automoviles";
+                $lista = self::$vehiculo->listar($action,$attr);
+                $tipoCarro = "automovil";
+                break;
+            case 'furgoneta':
+                $attr = "capCarga";
+                $titulo = "Capacidad Carga";
+                $tituloPrincipal ="Lista furgonetas";
+                $tipoCarro = "furgoneta";
+                $lista = self::$vehiculo->listar($action,$attr);
+                break;
+        }
+        
+        
+        Template::render(
+            DIR_VIEW . "vehiculo/lista.php",
+            ["titulo"=>"Lista",
+            "lista"=>$lista,
+            "attrPropio"=>$attr,
+            "titulo"=>$titulo,
+            "tituloPagina"=>$tituloPrincipal,
+            "tipoDeVehiculo"=>$tipoCarro
+            ]
+        );
+    }
+
+    public function flota(){
+        
     }
 
 }
